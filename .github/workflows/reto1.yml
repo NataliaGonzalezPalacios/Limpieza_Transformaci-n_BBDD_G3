@@ -1,0 +1,20 @@
+name: Crear y eliminar archivo TXT
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Crear archivo TXT
+      run: |
+        echo "Este es un archivo de texto" > archivo.txt
+        echo "Línea adicional" >> archivo.txt
+        cat archivo.txt
+
+    - name: Eliminar archivo TXT
+      run: rm archivo.txt
