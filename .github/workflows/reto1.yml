@@ -18,5 +18,4 @@ jobs:
       
         
 
-    - name: Eliminar archivo TXT
-      run: rm archivo.txt
+ 
