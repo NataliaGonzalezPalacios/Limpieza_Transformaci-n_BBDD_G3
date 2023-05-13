@@ -12,12 +12,10 @@ jobs:
     steps:
     - name: Crear archivo TXT
       run: |
-        echo "Este es un archivo de texto" > archivo.txt
-        echo "Línea adicional" >> archivo.txt
-        cat archivo.txt
         echo "Este es un archivo de texto" > archivo_2.txt
         echo "Línea adicional" >> archivo_2.txt
         cat archivo_2.txt
+      
         
 
     - name: Eliminar archivo TXT
