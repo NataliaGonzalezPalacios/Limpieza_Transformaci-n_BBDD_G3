@@ -16,14 +16,14 @@ jobs:
         mysql-version: '5.7'
         mysql-host: 'cualquiera123456.000webhostapp.com'
         mysql-port: '3306'
-        mysql-username: ${{ secrets.prueba123456 }}
-        mysql-password: ${{ secrets.conprueba1* }}
+        mysql-username: ${{ prueba123456 }}
+        mysql-password: ${{ conprueba1* }}
         
     - name: Crear tabla en la base de datos
       run: |
-        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ secrets.prueba123456 }} -p${{ secrets.conprueba1* }} -e "USE prueba; CREATE TABLE prueba_nata (nombre VARCHAR(255), pais VARCHAR(255), edad VARCHAR(255));"
+        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ prueba123456 }} -p${{ conprueba1* }} -e "USE prueba; CREATE TABLE prueba_nata (nombre VARCHAR(255), pais VARCHAR(255), edad VARCHAR(255));"
      
 
     - name: Insertar registros en la base de datos
       run: |
-        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ secrets.prueba123456 }} -p${{ secrets.conprueba1* }} -e "USE prueba; INSERT INTO prueba_nata (nombre, pais, edad) VALUES ('Natalia', 'CO', '26'); INSERT INTO prueba (nombre, pais, edad) VALUES ('Alison', 'CO', '13'); INSERT INTO nombre_de_la_tabla (nombre, pais, edad) VALUES ('Olga', 'CO', '60');"
+        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ prueba123456 }} -p${{ conprueba1* }} -e "USE prueba; INSERT INTO prueba_nata (nombre, pais, edad) VALUES ('Natalia', 'CO', '26'); INSERT INTO prueba (nombre, pais, edad) VALUES ('Alison', 'CO', '13'); INSERT INTO nombre_de_la_tabla (nombre, pais, edad) VALUES ('Olga', 'CO', '60');"
