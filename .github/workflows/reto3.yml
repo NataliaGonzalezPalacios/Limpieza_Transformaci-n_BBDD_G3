@@ -14,11 +14,16 @@ jobs:
       uses: docker/setup-mysql@v1
       with:
         mysql-version: '5.7'
-        mysql-host: ${{ secrets.MYSQL_HOST }}
-        mysql-port: ${{ secrets.MYSQL_PORT }}
-        mysql-username: ${{ secrets.MYSQL_USERNAME }}
-        mysql-password: ${{ secrets.MYSQL_PASSWORD }}
+        mysql-host: 'cualquiera123456.000webhostapp.com'
+        mysql-port: '3306'
+        mysql-username: ${{ secrets.prueba123456 }}
+        mysql-password: ${{ secrets.conprueba1* }}
+        
+    - name: Crear tabla en la base de datos
+      run: |
+        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ secrets.prueba123456 }} -p${{ secrets.conprueba1* }} -e "USE prueba; CREATE TABLE prueba_nata (nombre VARCHAR(255), pais VARCHAR(255), edad VARCHAR(255));"
+     
 
     - name: Insertar registros en la base de datos
       run: |
-        mysql -h ${{ secrets.MYSQL_HOST }} -P ${{ secrets.MYSQL_PORT }} -u ${{ secrets.MYSQL_USERNAME }} -p${{ secrets.MYSQL_PASSWORD }} -e "USE nombre_de_la_base_de_datos; INSERT INTO tabla (campo1, campo2, campo3) VALUES ('valor1', 'valor2', 'valor3'); INSERT INTO tabla (campo1, campo2, campo3) VALUES ('valor4', 'valor5', 'valor6'); INSERT INTO tabla (campo1, campo2, campo3) VALUES ('valor7', 'valor8', 'valor9');"
+        mysql -h cualquiera123456.000webhostapp.com -P 3306 -u ${{ secrets.prueba123456 }} -p${{ secrets.conprueba1* }} -e "USE prueba; INSERT INTO prueba_nata (nombre, pais, edad) VALUES ('Natalia', 'CO', '26'); INSERT INTO prueba (nombre, pais, edad) VALUES ('Alison', 'CO', '13'); INSERT INTO nombre_de_la_tabla (nombre, pais, edad) VALUES ('Olga', 'CO', '60');"
